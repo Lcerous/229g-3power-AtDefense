@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoseWin : MonoBehaviour
+public class Retry : MonoBehaviour
 {
     public void BtnRetry() // click and load new scene
     {

@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject video;
+
+    [SerializeField] private VideoTime videoTime;
+
     public void BtnPlay() // click and load new scene
     {
         SceneManager.LoadSceneAsync(1);
@@ -19,5 +22,8 @@ public class MainMenu : MonoBehaviour
     public void BtnCredits() //play video credits
     {
         video.SetActive(true);
+        videoTime.enabled = true;
+
+        this.gameObject.SetActive(false);
     }
 }

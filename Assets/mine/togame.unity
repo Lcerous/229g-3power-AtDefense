@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &117277037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -410,11 +410,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359020288}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfef092bd6041534cb3038c460498fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 874503762}
   remainingTime: 5
 --- !u!328 &359020290
 VideoPlayer:
@@ -442,7 +443,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://wasintamp1.github.io/avideo/0323.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
