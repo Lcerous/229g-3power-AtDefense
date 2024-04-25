@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanonController : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    Rigidbody2D rb;
-    
+    [SerializeField] private GameObject[] enemyShip;
+
+    void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Control();
+        
     }
 
-    private void Control()
+    private void YouWin()
     {
-        
+        if (enemyShip.Length <= 0)
+        {
+
+        }
     }
 }
