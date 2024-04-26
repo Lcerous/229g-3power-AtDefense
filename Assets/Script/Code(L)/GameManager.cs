@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,25 +11,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> enemyUnit = new List<GameObject>();
     public List<GameObject> EnemyUnit { get { return enemyUnit; } }
 
-    
-    void Awake()
-    {
 
-    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         EnemyUnit.Add(GameObject.FindGameObjectWithTag("Enemy"));
 
         if (enemyUnit.Count <= 0)
         {
-            SceneManager.LoadScene("SampleScene");
+            //Add you win UI
         }
         else
         {
