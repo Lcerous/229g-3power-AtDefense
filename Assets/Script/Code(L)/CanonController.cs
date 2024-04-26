@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 
 public class CanonController : MonoBehaviour
 {
-    /*[SerializeField] private float rotationSpeed = 10;
-
-    private Vector2 rotateAxis = Vector2.left;
-
-    private Rigidbody2D rb;*/
 
     [SerializeField] GameObject canon;
     [SerializeField] GameObject bullet;
@@ -55,19 +50,5 @@ public class CanonController : MonoBehaviour
         }
     }
 
-    /*private void Rotation()
-    {
-        if (gameObject.transform.rotation.z <= 90)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                transform.rotation = Quaternion.Euler(0, 0, rotationSpeed * Time.deltaTime);
-                Debug.Log("Working");
-            }
-        } 
-        else if (gameObject.transform.rotation.z >= 0)
-        {
-            
-        }
-    }*/
+    
 }

@@ -20,6 +20,14 @@ public class ProjectileBehavior : MonoBehaviour
 
         SetStraightVelocity();
         SetDestoryTime();
+
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.yellow, 5);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity); 
+        Vector2 projectileV = CalculateProjectile(SpawnPoint.position, hit.point, 1);
+
+        Rigidbody2D rb = Instantiate(rb, SpawnPoint.position, Quaternion.identity);
+        rb.velocity = projectileV;*/
     }
 
     // Update is called once per frame
@@ -37,4 +45,18 @@ public class ProjectileBehavior : MonoBehaviour
     {
         Destroy(gameObject, destorytime);
     }
+
+    private Vector2 CalculateProjectile(Vector2 origin, Vector2 targetPoint, float time)
+    {
+        Vector2 dist = targetPoint - origin;
+
+        float velocityX = dist.x / time;
+        float velocityY = dist.y / time + 0.5f * Mathf.Abs(Physics2D.gravity.y);
+
+        Vector2 ProjectileVelocity = new Vector2(velocityX, velocityY);
+
+        return ProjectileVelocity;
+    }
+
+
 }
