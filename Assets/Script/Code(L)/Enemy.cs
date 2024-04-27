@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+    [SerializeField] GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            //Add Score
         }
     }
 }

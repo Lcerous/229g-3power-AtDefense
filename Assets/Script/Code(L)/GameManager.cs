@@ -23,27 +23,34 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        EnemyUnit.Add(GameObject.FindGameObjectWithTag("Enemy"));
+        //EnemyUnit.Add(GameObject.FindGameObjectWithTag("Enemy"));
 
-        if (enemyUnit.Count <= 0)
-        {
-            //Add you win UI
-        }
-        else
-        {
-            ListChecking();
-        }
+        
+        ListChecking();
+        
     }
 
     private void ListChecking()
     {
-        foreach (GameObject n in EnemyUnit)
+        if (enemyUnit.Count > 0)
         {
-            if (n == null)
+            foreach (GameObject n in EnemyUnit)
             {
-                EnemyUnit.Remove(n);
+                if (n == null)
+                {
+                    EnemyUnit.Remove(n);
+                }
             }
         }
+        else
+        {
+            // Change to win Scence
+            SceneManager.LoadScene("SampleScene");
+        }
+
+
     }
+
+
     
 }

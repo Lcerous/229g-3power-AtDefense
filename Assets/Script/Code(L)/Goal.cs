@@ -22,6 +22,8 @@ public class Goal : MonoBehaviour
         if (collision.gameObject.layer == 3)
         {
             //Add you lose UI
+            SceneManager.LoadScene("SampleScene");
+
         }
     }
 }
