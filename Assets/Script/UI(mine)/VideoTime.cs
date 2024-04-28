@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using static System.Net.WebRequestMethods;
 
@@ -36,6 +37,7 @@ public class VideoTime : MonoBehaviour
             remainingTime = timeStart;
             canvas.SetActive(true);
             this.enabled = false;
+            SceneManager.LoadSceneAsync(0);
         }
     }
 }

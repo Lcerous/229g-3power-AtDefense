@@ -4,12 +4,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class GameManager : MonoBehaviour
 {
+    public float timeWin;
+    bool win = false;
+    public GameObject textWin;
+
+    bool playVideo = false;
 
     [SerializeField] private List<GameObject> enemyUnit = new List<GameObject>();
     public List<GameObject> EnemyUnit { get { return enemyUnit; } }
+
+    float score = 0;
+    public Text textScore;
+
+    public GameObject video;
+    public VideoTime videoTime;
 
 
 
@@ -17,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        textScore.text = string.Format("Score: {0}", score);
     }
 
     // Update is called once per frame
@@ -24,9 +38,19 @@ public class GameManager : MonoBehaviour
     {
 
         //EnemyUnit.Add(GameObject.FindGameObjectWithTag("Enemy"));
-
-        
         ListChecking();
+        if (textWin.active == true)
+        {
+            if (timeWin > 0)
+            {
+                timeWin -= Time.deltaTime;
+            }
+            else
+            {
+                win = true;
+            }
+        }
+        
         
     }
 
@@ -39,13 +63,23 @@ public class GameManager : MonoBehaviour
                 if (n == null)
                 {
                     EnemyUnit.Remove(n);
+                    score += 100;
+                    textScore.text = string.Format("Score: {0}", score);
                 }
             }
         }
         else
         {
-            // Change to win Scence
-            SceneManager.LoadScene("SampleScene");
+            if (win == false)
+            {
+                textWin.SetActive(true);
+                Cursor.visible = true;
+            }
+            else
+            {
+                video.SetActive(true);
+                videoTime.enabled = true;
+            }
         }
 
 
