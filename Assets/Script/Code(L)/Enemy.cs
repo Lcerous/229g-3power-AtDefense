@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            //Add Score
         }
     }
 }

@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
                 if (n == null)
                 {
                     EnemyUnit.Remove(n);
-                    score += 100;
+                    score += 1;
                     textScore.text = string.Format("Score: {0}", score);
                 }
             }
