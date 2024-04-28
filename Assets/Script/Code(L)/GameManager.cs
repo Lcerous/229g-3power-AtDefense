@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        textScore.text = string.Format("Score: {0}", score);
+        textScore.text = string.Format("Enemy Destroyed: {0}", score);
     }
 
     // Update is called once per frame
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyUnit.Remove(n);
                     score += 1;
-                    textScore.text = string.Format("Score: {0}", score);
+                    textScore.text = string.Format("Enemy Destroyed: {0}", score);
                 }
             }
         }
